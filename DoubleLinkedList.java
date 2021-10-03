@@ -8,16 +8,6 @@ public class DoubleLinkedList {
     }
 
     public void addToHead(String data){
-        /*
-        Since a doubly linked list has an additional tail property and is built with nodes that each have two pointers, there are a few more steps:
-        Start by checking to see if there is a current head to the list
-        If there is (meaning the list is not empty), then we want to reset the pointers at the head of the list:
-        Set the current head’s previous node to the new head
-        Set the new head’s next node to the current head
-        Update the head property to be the new head
-        Finally, if there isn’t a current tail to the list (meaning the list was empty):
-        Update the tail property to be the new head since that node will be both the head and tail
-        */
         Node newHead = new Node(data);
         Node currentHead = this.head;
         if (currentHead != null){
@@ -31,15 +21,6 @@ public class DoubleLinkedList {
     }
 
     public void addToTail(String data){
-        /*
-        Start by checking to see if there is a current tail to the list
-        If there is (meaning the list is not empty), then we want to reset the pointers at the tail of the list:
-        Set the current tail’s next node to the new tail
-        Set the new tail’s previous node to the current tail
-        Update the tail property to be the new tail
-        Finally, if there isn’t a current head to the list (meaning the list was empty):
-        Update the head property to be the new tail since that node will be both the head and tail
-        */
         Node newTail = new Node(data);
         Node currentTail = this.tail;
 
@@ -118,34 +99,8 @@ public class DoubleLinkedList {
         return output;
     }
 
-    public static void main(String[] args) {
-        // Create your subway line here:
-        DoubleLinkedList subway = new DoubleLinkedList();
-        subway.addToHead("Times Square");
-        subway.addToHead("Grand Central");
-        subway.addToHead("Central Park");
-        subway.printList();
-        subway.addToTail("Penn Station");
-        subway.addToTail("Wall Street");
-        subway.addToTail("Brooklyn Bridge");
-        subway.printList();
-        subway.removeHead();
-        subway.removeTail();
-        subway.printList();
-        subway.removeByData("Times Square");
-        subway.printList();
-
-        DoubleLinkedList testList = new DoubleLinkedList();
-        testList.addToHead("nine");
-        testList.removeTail();
-        testList.addToTail("eight");
-        testList.addToTail("two");
-        testList.removeHead();
-        testList.addToTail("four");
-        testList.removeByData("nine");
-        testList.removeHead();
-        System.out.println(testList.head.data);
-    }
+    
+    
 }
 
 
