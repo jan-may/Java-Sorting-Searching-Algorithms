@@ -52,6 +52,12 @@ public class LinkedList {
         System.out.println(output);
         return output;
     }
+    
+    public Node findNodeRecursively(String data, Node currentNode) {
+        if (currentNode == null) return null;
+        else if (currentNode.data == data) return currentNode;
+        return this.findNodeRecursively(data, currentNode.getNextNode());
+    }
 
     public static void swapNodes(LinkedList list, String data1, String data2) {
         System.out.println("Swapping " + data1 + " with " + data2);
